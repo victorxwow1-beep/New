@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: zenvyra-studio
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /healthz
+    autoDeployTrigger: off
+    envVars:
+      - key: ZENVYRA_HOSTED
+        value: '1'
+      - key: ZENVYRA_USERNAME
+        value: studio
+      - key: ZENVYRA_PASSWORD
+        sync: false
+      - key: ZENVYRA_MAX_UPLOAD_BYTES
+        value: '500000000'
